@@ -1,5 +1,6 @@
 package com.testesautomatizados.demo;
 
+import com.testesautomatizados.demo.domain.model.Planet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
