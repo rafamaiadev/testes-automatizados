@@ -122,6 +122,6 @@ public class PlanetServiceTest {
     public void deletePlanet_WithUnexistingId_ThrowsAnyException() {
         doThrow(new RuntimeException()).when(planetRepository).deleteById(99L);
 
-        assertThatThrownBy(() -> planetService.delete(99l)).isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(() -> planetService.delete(99L)).isInstanceOf(RuntimeException.class);
     }
 }
