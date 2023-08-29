@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/planets")
@@ -27,13 +26,13 @@ public class PlanetController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Planet> getById(@PathVariable("id") Long id) {
-        return planetService.getById(id).map(planet -> ResponseEntity.ok(planet))
+        return planetService.getById(id).map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/name/{name}")
     public ResponseEntity<Planet> getByName(@PathVariable("name") String name) {
-        return planetService.getByName(name).map(planet -> ResponseEntity.ok(planet))
+        return planetService.getByName(name).map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
